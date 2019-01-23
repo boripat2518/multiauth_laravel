@@ -20,14 +20,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
-Route::prefix('admin')->group(function() {
+Route::prefix('admin/')->group(function() {
   Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
   Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
   Route::get('/logout', 'Auth\AdminLoginController@adminLogout')->name('admin.logout');
 });
 
-Route::prefix('merchant')->group(function() {
+Route::prefix('merchant/')->group(function() {
   Route::get('/login', 'Auth\MerchantLoginController@showLoginForm')->name('merchant.login');
   Route::post('/login', 'Auth\MerchantLoginController@login')->name('merchant.login.submit');
   Route::get('/', 'MerchantController@index')->name('merchant.dashboard');
