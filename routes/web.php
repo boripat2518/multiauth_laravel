@@ -26,3 +26,10 @@ Route::prefix('admin')->group(function() {
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
   Route::get('/logout', 'Auth\AdminLoginController@adminLogout')->name('admin.logout');
 });
+
+Route::prefix('merchant')->group(function() {
+  Route::get('/login', 'Auth\MerchantLoginController@showLoginForm')->name('merchant.login');
+  Route::post('/login', 'Auth\MerchantLoginController@login')->name('merchant.login.submit');
+  Route::get('/', 'MerchantController@index')->name('merchant.dashboard');
+  Route::get('/logout', 'Auth\MerchantLoginController@merchantLogout')->name('merchant.logout');
+});

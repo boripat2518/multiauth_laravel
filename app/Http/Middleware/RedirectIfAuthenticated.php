@@ -28,6 +28,11 @@ class RedirectIfAuthenticated
               return redirect()->route('admin.dashboard');
             }
             break;
+            case 'merchant':
+              if (Auth::guard($guard)->check()) {
+                return redirect()->route('merchant.dashboard');
+              }
+              break;
           default:
             if (Auth::guard($guard)->check()) {
                 return redirect('/home');

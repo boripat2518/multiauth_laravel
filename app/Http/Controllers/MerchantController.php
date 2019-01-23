@@ -13,7 +13,7 @@ class MerchantController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:merchant');
     }
 
     /**
@@ -23,6 +23,6 @@ class MerchantController extends Controller
      */
     public function index()
     {
-        return view('merchant.dashboard');
+        return view('merchant');
     }
 }

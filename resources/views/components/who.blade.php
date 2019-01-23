@@ -18,3 +18,13 @@
   You are logout from <strong>Admin</strong>.
 </p>
 @endif
+
+@if (Auth::guard('merchant')->check())
+<p>
+  You are login as <strong>Merchant</strong>.
+</p>
+@else
+<p class="text-danger">
+  You are logout from <strong>Merchant</strong>.
+</p>
+@endif
